@@ -1,0 +1,17 @@
+Category,Item,Unit,EmissionFactor
+Transport,Car (Petrol),km,0.12
+Transport,Car (Diesel),km,0.15
+Transport,Bus,km,0.08
+Transport,Train,km,0.045
+Transport,Bike,km,0.01
+Transport,Walking,km,0.0
+Transport,EV (Electric Car),km,0.05
+Energy,Electricity,kWh,0.82
+Food,Beef,kg,27.0
+Food,Chicken,kg,6.9
+Food,Veggies,kg,2.0
+Food,Vegan Meal,meal,1.5
+Food,Vegetarian Meal,meal,2.5
+Food,Non-Veg Meal,meal,5.0
+Shopping,Clothes,item,10.0
+Shopping,Electronics,item,50.0
