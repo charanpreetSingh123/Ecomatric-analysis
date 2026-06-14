@@ -21,9 +21,9 @@ from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.cluster import KMeans
 
 
-# ============================================================
+# =====================
 # PAGE CONFIGURATION
-# ============================================================
+# =====================
 st.set_page_config(
     page_title="EcoTrack AI – Carbon Footprint Intelligence",
     page_icon="🌍",
@@ -31,9 +31,9 @@ st.set_page_config(
 )
 
 
-# ============================================================
+# =================
 # CUSTOM STYLING
-# ============================================================
+# =================
 st.markdown(
     """
 <style>
@@ -184,9 +184,9 @@ button[data-baseweb="tab"][aria-selected="true"] {
 )
 
 
-# ============================================================
+# ===============
 # DATA LOADING
-# ============================================================
+# ================
 @st.cache_data
 def load_emission_factors(path="emission_factors.csv"):
     if not os.path.exists(path):
@@ -246,9 +246,9 @@ real_df = load_real_dataset()
 ef_map = ef.set_index("Item")["EmissionFactor"].to_dict()
 
 
-# ============================================================
+# ==================
 # HELPER FUNCTIONS
-# ============================================================
+# ==================
 def safe_get_factor(item_name: str, default_value: float) -> float:
     return ef_map.get(item_name, default_value)
 
@@ -316,9 +316,9 @@ def plotly_dark_layout() -> dict:
     )
 
 
-# ============================================================
+# ========================
 # RULE-BASED CALCULATION
-# ============================================================
+# ========================
 def calc_emissions(
     transport_mode, transport_km, electricity_kwh,
     diet_type, meals_per_day,
@@ -360,9 +360,9 @@ st.markdown(
 )
 
 
-# ============================================================
+# ===================
 # SIDEBAR INPUTS
-# ============================================================
+# ===================
 with st.sidebar:
     st.header("🧾 Daily Lifestyle Inputs")
     st.caption("Enter your daily habits to estimate your carbon footprint.")
@@ -399,9 +399,9 @@ with st.sidebar:
     energy_eff = st.selectbox("Energy Efficiency Habit", ["No", "Sometimes", "Yes"])
 
 
-# ============================================================
+# ==========================
 # CURRENT USER EMISSIONS
-# ============================================================
+# ==========================
 em_transport, em_energy, em_food, em_shopping, em_total = calc_emissions(
     transport_mode, transport_km, electricity_kwh,
     diet_type, meals_per_day,
@@ -414,9 +414,9 @@ sustainability_score = compute_sustainability_score(em_total)
 sustainability_band = score_band(sustainability_score)
 
 
-# ============================================================
+# ====================
 # ML TRAINING 
-# ============================================================
+# ====================
 syn_model = None
 best_model_name = None
 syn_r2 = None
@@ -517,13 +517,11 @@ if not syn.empty and all(c in syn.columns for c in EXPECTED_FEATURES) and TARGET
         }
         segment_label = cluster_names.get(current_cluster, f"Cluster {current_cluster}")
 
-        # Feature importance — shorten OHE names for readability
         try:
             if best_model_name in ("Random Forest", "Gradient Boosting"):
                 model_obj = syn_model.named_steps["model"]
                 if hasattr(model_obj, "feature_importances_"):
                     ohe = syn_model.named_steps["pre"].named_transformers_["cat"]
-                    # Clean up OHE feature names: "cat__transport_mode_Car (Petrol)" → "Car (Petrol)"
                     raw_cat = ohe.get_feature_names_out(CAT_COLS)
                     clean_cat = [n.split("_", 2)[-1] if "_" in n else n for n in raw_cat]
                     all_features = list(clean_cat) + NUM_COLS
@@ -537,16 +535,16 @@ if not syn.empty and all(c in syn.columns for c in EXPECTED_FEATURES) and TARGET
             feature_importance_df = None
 
 
-# ============================================================
+# =============================
 # REAL DATASET BENCHMARKING
-# ============================================================
+# ===========================================================
 real_avg = get_real_world_average(real_df)
 relative_position = (em_total / real_avg * 100) if real_avg else None
 
 
-# ============================================================
+# =====================
 # MAIN TABS
-# ============================================================
+# =====================
 tab1, tab2, tab3, tab4 = st.tabs([
     "📊 Dashboard",
     "🧠 ML & Insights",
@@ -555,9 +553,9 @@ tab1, tab2, tab3, tab4 = st.tabs([
 ])
 
 
-# ============================================================
+# =========================
 # TAB 1 — MAIN DASHBOARD
-# ============================================================
+# ==========================
 with tab1:
 
     # ── KPI Cards ──────────────────────────────────────────
@@ -719,7 +717,7 @@ with tab1:
         st.markdown("</div>", unsafe_allow_html=True)
 
 
-# ============================================================
+# =============================
 # TAB 2 — ML & INSIGHTS
 # ============================================================
 with tab2:
@@ -814,7 +812,7 @@ with tab2:
         st.markdown("</div>", unsafe_allow_html=True)
 
 
-# ============================================================
+# ==================================
 # TAB 3 — SCENARIO OPTIMIZER
 # ============================================================
 with tab3:
