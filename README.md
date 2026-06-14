@@ -1,157 +1,242 @@
-# 🌍 Environmental Impact Estimator (ML-Powered)
+<div align="center">
 
-An interactive **Machine Learning + Data Analytics** web application built with **Streamlit** to estimate a user’s **daily carbon footprint** based on lifestyle habits such as transportation, electricity usage, diet, and shopping behavior.
+<br/>
 
-This project combines **rule-based carbon emission calculations** using emission factors with **Machine Learning predictions** trained on a synthetic lifestyle dataset to provide deeper environmental insights. Users can also explore **what-if scenarios**, view **category-wise emission breakdowns**, discover their **lifestyle segment**, and receive **personalized sustainability suggestions**.
+<img src="https://img.shields.io/badge/Python-ML%20Powered-3B6D11?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+<img src="https://img.shields.io/badge/Streamlit-Web%20App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/>
+<img src="https://img.shields.io/badge/Scikit--learn-Random%20Forest%20%7C%20KMeans-534AB7?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-learn"/>
+<img src="https://img.shields.io/badge/Plotly-Interactive%20Charts-1D9E75?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly"/>
+
+<br/><br/>
+
+# 🌍 EcoTrack AI — Environmental Impact Estimator
+
+### ML-Powered Carbon Footprint Intelligence System
+
+**An interactive web app that estimates your daily carbon footprint using rule-based emission factors and machine learning.**  
+Combines data science, lifestyle clustering, scenario simulation, and sustainability analytics into one unified platform.
+
+<br/>
+
+[![Live App](https://img.shields.io/badge/🚀%20Live%20Demo-Streamlit%20Cloud-FF4B4B?style=for-the-badge&logo=streamlit)](https://ecomatric-analysis-ldaxkcdkimlyynempnwohw.streamlit.app)
+
+<br/>
+
+</div>
 
 ---
 
-## 🚀 Project Overview
+## 📸 Screenshots
 
-The **Environmental Impact Estimator** is designed to help users understand how their daily activities contribute to carbon emissions.  
-It uses:
+### 🏠 Main Dashboard
+![Dashboard](assets/dashboard.png)
 
-- **Rule-based emission estimation** using real-world inspired **emission factors**
-- **Machine Learning prediction** using a **Random Forest Regressor**
-- **Lifestyle segmentation** using **K-Means Clustering**
-- **Interactive visualizations** using **Plotly**
-- **Scenario simulation** for greener lifestyle decisions
+### 🧠 ML Insights
+![ML Insights](assets/ml_insights.png)
 
-The application provides a practical demonstration of how **data science, machine learning, and sustainability analytics** can be combined into a real-world environmental intelligence tool.
+### 🎯 Sustainability Score
+![Sustainability Score](assets/sustanable_score.png)
+
+### 📊 Realtime Carbon Distribution
+![Carbon Distribution](assets/realtime_carbon_distribution.png)
+
+### 🥗 Diet & Travel vs Carbon
+![Diet and Travel vs Carbon](assets/dietandtravel_vs_carbon.png)
+
+---
+
+## 📌 Project Overview
+
+The **EcoTrack AI — Environmental Impact Estimator** helps users understand how daily activities contribute to carbon emissions. It uses a **hybrid approach** — combining transparent rule-based factor calculations with machine learning predictions — to give users both interpretable estimates and data-driven insights.
+
+| Approach | Method |
+|---|---|
+| **Rule-Based** | Emission factors dataset → category-wise CO₂ calculation |
+| **ML Prediction** | Random Forest Regressor trained on synthetic lifestyle data |
+| **Clustering** | K-Means to classify users into lifestyle segments |
+| **Simulation** | What-if scenario analysis for greener decisions |
 
 ---
 
 ## ✨ Key Features
 
-### 1. Carbon Footprint Estimation
-- Estimates **daily carbon emissions (kg CO₂/day)** based on:
-  - Transport mode
-  - Daily travel distance
-  - Electricity consumption
-  - Diet type
-  - Meals per day
-  - Shopping behavior
-  - Detailed food intake (beef, chicken, vegetables)
-
-### 2. Rule-Based Emission Calculation
-- Uses an **Emission Factors Dataset** to compute emissions from different categories:
-  - **Transport**
-  - **Energy**
-  - **Food**
-  - **Shopping**
-
-### 3. Machine Learning Prediction
-- Trains a **Random Forest Regressor** on a **synthetic lifestyle dataset**
-- Predicts carbon footprint based on user inputs
-- Compares **ML prediction** with **rule-based estimation**
-
-### 4. Lifestyle Segmentation
-- Uses **K-Means Clustering** to classify users into:
-  - **Low Impact 🌱**
-  - **Moderate Impact 🌍**
-  - **High Impact 🔥**
-
-### 5. What-if Scenario Analysis
-- Allows users to simulate alternative lifestyle choices such as:
-  - Changing transport mode
-  - Reducing travel distance
-  - Lowering electricity usage
-- Compares current vs scenario emissions visually
-
-### 6. Interactive Visualizations
-- **Donut chart** for category-wise carbon footprint breakdown
-- **Bar chart** for current vs scenario comparison
-- **Feature importance chart** for ML model insights
-
-### 7. Personalized Sustainability Suggestions
-- Provides custom recommendations based on high-emission areas:
-  - Cleaner transportation options
-  - Reduced electricity usage
-  - Diet improvements
-  - Sustainable shopping habits
+| Feature | Description |
+|---|---|
+| 📊 **Carbon Estimation** | Daily CO₂ estimate across transport, energy, food, and shopping |
+| 🤖 **ML Prediction** | Random Forest predicts footprint and compares with rule-based result |
+| 🧬 **Lifestyle Segmentation** | K-Means clusters users into Low / Moderate / High impact groups |
+| 🧪 **Scenario Simulator** | Simulate greener choices and see the emission difference instantly |
+| 💡 **Smart Suggestions** | Personalised sustainability tips based on your highest-emission areas |
+| 📈 **Interactive Charts** | Donut, bar, gauge, and feature importance charts via Plotly |
 
 ---
 
 ## 🧠 Machine Learning Workflow
 
-This project includes a complete mini-ML pipeline:
-
-### Model Used
-- **Random Forest Regressor**
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     ML Pipeline Overview                        │
+├────────────────────────┬────────────────────────────────────────┤
+│  Step                  │  Detail                                │
+├────────────────────────┼────────────────────────────────────────┤
+│  Dataset               │  synthetic_lifestyles.csv              │
+│  Features              │  Transport · Diet · Energy · Shopping  │
+│  Preprocessing         │  OneHotEncoder + Passthrough           │
+│  Train / Test Split    │  80% train · 20% holdout               │
+│  Model                 │  Random Forest Regressor               │
+│  Evaluation            │  R² Score · Mean Absolute Error (MAE)  │
+│  Clustering            │  K-Means (3 segments)                  │
+│  Output                │  Predicted kg CO₂/day + Segment label  │
+└────────────────────────┴────────────────────────────────────────┘
+```
 
 ### Why Random Forest?
-- Handles mixed feature types well
-- Works effectively with non-linear relationships
-- Robust against overfitting compared to a single decision tree
-- Suitable for structured tabular lifestyle data
-
-### ML Pipeline Steps
-1. Load synthetic lifestyle dataset
-2. Select input features and target variable (`em_total`)
-3. Apply preprocessing:
-   - **One-Hot Encoding** for categorical features
-   - Pass-through for numerical features
-4. Train model on 80% of data
-5. Evaluate on 20% holdout set
-6. Predict carbon footprint for current user input
-7. Display:
-   - **R² Score**
-   - **Mean Absolute Error (MAE)**
-   - **Feature Importance**
+- Handles mixed feature types (categorical + numerical) effectively
+- Captures non-linear relationships between lifestyle factors
+- More robust against overfitting than a single decision tree
+- Naturally provides feature importance for explainability
 
 ---
 
-## 📊 Datasets Used
+## 📊 Datasets
 
-### 1. `emission_factors.csv`
-This dataset stores **carbon emission factors** for various activities and consumption categories.
+### `emission_factors.csv`
+Stores carbon emission factors for each activity and consumption category.
 
-#### Example fields:
-- `Category`
-- `Item`
-- `Unit`
-- `EmissionFactor`
+| Field | Description |
+|---|---|
+| `Category` | Transport · Energy · Food · Shopping |
+| `Item` | Specific activity (e.g. Car Petrol, Beef, Electricity) |
+| `Unit` | km · kWh · meal · kg · item |
+| `EmissionFactor` | kg CO₂ emitted per unit |
 
-#### Example categories:
-- Transport
-- Energy
-- Food
-- Shopping
+### `synthetic_lifestyles.csv`
+Used to train the ML model and run K-Means clustering.
 
----
-
-### 2. `synthetic_lifestyles.csv`
-This dataset is used to train the Machine Learning model and perform clustering.
-
-#### Example fields:
-- `transport_mode`
-- `transport_km_day`
-- `electricity_kwh_day`
-- `diet_type`
-- `meals_per_day`
-- `clothes_per_month`
-- `electronics_per_year`
-- `beef_kg_day`
-- `chicken_kg_day`
-- `veggies_kg_day`
-- `em_total`
+| Field | Description |
+|---|---|
+| `transport_mode` | Mode of daily transport |
+| `transport_km_day` | Daily travel distance (km) |
+| `electricity_kwh_day` | Daily electricity usage (kWh) |
+| `diet_type` | Vegan · Vegetarian · Non-Veg |
+| `meals_per_day` | Number of meals per day |
+| `clothes_per_month` | Monthly clothing purchases |
+| `electronics_per_year` | Annual electronics purchases |
+| `beef_kg_day` | Daily beef consumption (kg) |
+| `chicken_kg_day` | Daily chicken consumption (kg) |
+| `veggies_kg_day` | Daily vegetable consumption (kg) |
+| `em_total` | Total daily emission — ML target variable |
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Programming Language
-- **Python**
+```
+┌──────────────────┬───────────────────────────────────────────────┐
+│  Layer           │  Tools                                        │
+├──────────────────┼───────────────────────────────────────────────┤
+│  Framework       │  Streamlit                                    │
+│  Language        │  Python                                       │
+│  ML & Clustering │  Scikit-learn (Random Forest · K-Means)       │
+│  Data Processing │  Pandas · NumPy                               │
+│  Visualization   │  Plotly Express · Plotly Graph Objects        │
+└──────────────────┴───────────────────────────────────────────────┘
+```
 
-### Libraries & Frameworks
-- **Streamlit** – Web application framework
-- **Pandas** – Data handling and preprocessing
-- **NumPy** – Numerical operations
-- **Scikit-learn** – Machine Learning and clustering
-- **Plotly** – Interactive data visualization
+---
 
-### ML Techniques Used
-- **Random Forest Regression**
-- **K-Means Clustering**
-- **One-Hot Encoding**
-- **Feature Importance Analysis**
+## 🚀 Getting Started
+
+### Prerequisites
+- Python 3.10+
+- pip
+
+### Installation
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/charanpreetSingh123/ecomatric-analysis.git
+cd ecomatric-analysis
+```
+
+**2. Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**3. Run the app**
+```bash
+streamlit run app.py
+```
+
+**4. Open in browser**
+```
+http://localhost:8501
+```
+
+---
+
+## 📁 Project Structure
+
+```
+ecomatric-analysis/
+│
+├── app.py                        # Main Streamlit application
+├── requirements.txt              # Python dependencies
+├── emission_factors.csv          # Rule-based emission factor lookup
+├── synthetic_lifestyles.csv      # ML training dataset
+├── Carbon_Emission.csv           # Real-world benchmarking dataset
+│
+├── assets/
+│   ├── dashboard.png
+│   ├── ml_insights.png
+│   ├── sustanable_score.png
+│   ├── realtime_carbon_distribution.png
+│   └── dietandtravel_vs_carbon.png
+│
+└── README.md
+```
+
+---
+
+## 🌱 What This Project Demonstrates
+
+```
+✅  Rule-based carbon estimation using emission factor datasets
+✅  End-to-end ML pipeline — preprocessing, training, evaluation, prediction
+✅  K-Means lifestyle clustering with interpretable segment labels
+✅  What-if scenario simulation for greener decision making
+✅  Feature importance analysis for model explainability
+✅  Interactive dark-themed Streamlit dashboard with Plotly charts
+✅  Streamlit Cloud deployment with requirements.txt
+```
+
+---
+
+## 🔖 Version
+
+| Version | Description |
+|---|---|
+| `v1.0.0` | Initial release — rule-based + ML hybrid carbon footprint estimator |
+
+---
+
+## 👤 Author
+
+**Charanpreet Singh**  
+B.Tech CSE — CGC University Mohali
+
+[![GitHub](https://img.shields.io/badge/GitHub-charanpreetSingh123-24292e?style=flat-square&logo=github)](https://github.com/charanpreetSingh123)
+[![Live App](https://img.shields.io/badge/Live%20App-Streamlit-FF4B4B?style=flat-square&logo=streamlit)](https://ecomatric-analysis-ldaxkcdkimlyynempnwohw.streamlit.app)
+
+---
+
+<div align="center">
+
+**Built for Sustainability · Powered by Machine Learning · Deployed on Streamlit Cloud**
+
+<br/>
+
+*Found this useful? Give it a ⭐ on GitHub!*
+
+</div>
