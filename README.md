@@ -232,7 +232,7 @@ ecomatric-analysis/
 
 ```
 ✅  Rule-based carbon estimation using emission factor datasets
-✅  End-to-end ML pipeline — preprocessing, training, evaluation, prediction
+✅  End-to-end ML pipeline preprocessing, training, evaluation, prediction
 ✅  K-Means lifestyle clustering with interpretable segment labels
 ✅  What-if scenario simulation for greener decision making
 ✅  Feature importance analysis for model explainability
