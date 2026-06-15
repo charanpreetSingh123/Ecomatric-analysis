@@ -76,7 +76,7 @@ Combines data science, lifestyle clustering, scenario simulation, and sustainabi
 
 ## 📌 Project Overview
 
-The **EcoTrack AI — Environmental Impact Estimator** helps users understand how daily activities contribute to carbon emissions. It uses a **hybrid approach** — combining transparent rule-based factor calculations with machine learning predictions — to give users both interpretable estimates and data-driven insights.
+The **EcoTrack AI — Environmental Impact Estimator** helps users understand how daily activities contribute to carbon emissions. It uses a **hybrid approach** , combining transparent rule-based factor calculations with machine learning predictions , to give users both interpretable estimates and data-driven insights.
 
 | Approach | Method |
 |---|---|
