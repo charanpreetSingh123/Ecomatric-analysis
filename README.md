@@ -28,20 +28,49 @@ Combines data science, lifestyle clustering, scenario simulation, and sustainabi
 
 ## 📸 Screenshots
 
+<table>
+<tr>
+<td align="center" width="50%">
+
 ### 🏠 Main Dashboard
-![Dashboard](assets/dashboard.png)
+<img src="assets/dashboard.png" width="100%">
+
+</td>
+<td align="center" width="50%">
 
 ### 🧠 ML Insights
-![ML Insights](assets/ml_insights.png)
+<img src="assets/ml_insights.png" width="100%">
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
 
 ### 🎯 Sustainability Score
-![Sustainability Score](assets/sustanable_score.png)
+<img src="assets/sustanable_score.png" width="100%">
+
+</td>
+<td align="center">
 
 ### 📊 Realtime Carbon Distribution
-![Carbon Distribution](assets/realtime_carbon_distribution.png)
+<img src="assets/realtime_carbon_distribution.png" width="100%">
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
 
 ### 🥗 Diet & Travel vs Carbon
-![Diet and Travel vs Carbon](assets/dietandtravel_vs_carbon.png)
+<img src="assets/dietandtravel_vs_carbon.png" width="100%">
+
+</td>
+<td align="center">
+
+</td>
+</tr>
+</table>
 
 ---
 
