@@ -253,7 +253,6 @@ ecomatric-analysis/
 ## 👤 Author
 
 **Charanpreet Singh**  
-B.Tech CSE — CGC University Mohali
 
 [![GitHub](https://img.shields.io/badge/GitHub-charanpreetSingh123-24292e?style=flat-square&logo=github)](https://github.com/charanpreetSingh123)
 [![Live App](https://img.shields.io/badge/Live%20App-Streamlit-FF4B4B?style=flat-square&logo=streamlit)](https://ecomatric-analysis-ldaxkcdkimlyynempnwohw.streamlit.app)
